@@ -1,23 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>2026 Car Rental Profit Check</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>2026 Car Rental Profit Check</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; 
+            margin: 0; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
+        }
+        /* Background styling to match your image */
+        .site-bg {
+            background: linear-gradient(rgba(248, 250, 252, 0.8), rgba(248, 250, 252, 0.8)), 
+                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+        .nav { 
+            padding: 30px 20px; 
+            display: flex; 
+            justify-content: center; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        /* Space logo font style */
+        .logo {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: #0f172a;
+            letter-spacing: 1px;
+        }
+        .hero { 
+            text-align: center; 
+            padding: 40px 20px; 
+        }
+        h1 { 
+            font-size: 42px; 
+            color: #0f172a; 
+            margin-bottom: 12px; 
+            font-weight: 800;
+        }
+        .subhead { 
+            font-size: 19px; 
+            color: #475569; 
+            max-width: 600px; 
+            margin: 0 auto 40px; 
+        }
+        .wrapper { 
+            max-width: 620px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 24px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        iframe { 
+            width: 100%; 
+            height: 1000px; 
+            border: none; 
+        }
+        .about-section { 
+            max-width: 800px; 
+            margin: 80px auto 0; 
+            padding: 60px 20px; 
+            border-top: 1px solid #e2e8f0; 
+            display: flex; 
+            gap: 40px; 
+            align-items: center; 
+            background: rgba(255,255,255,0.5);
+        }
+        .avatar { 
+            width: 160px; 
+            height: 160px; 
+            border-radius: 50%; 
+            flex-shrink: 0;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .about-content h2 { 
+            margin-top: 0; 
+            font-size: 24px; 
+            color: #0f172a;
+        }
+        .about-content p { 
+            color: #475569; 
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            .about-section { flex-direction: column; text-align: center; }
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-bg">
+        <div class='nav'>
+            <div class="logo">Space</div>
+        </div>
 
-  <style>
-    :root {
-      --bg: #f4f6f8;
-      --card: #ffffff;
-      --text: #24324a;
-      --muted: #6b7280;
-      --accent: #1f7a4d;
-      --border: #e5e7eb;
-    }
+        <div class='hero'>
+            <h1>2026 Car Rental Profit Check</h1>
+            <p class='subhead'>See what the platform is actualy costing your fleet. Built from real host numbers. Takes under 60 seconds.</p>
+            
+            <div class='wrapper'>
+                <iframe src="https://car-rental-profit-reality-check.vercel.app/" title="Profit Calculator"></iframe>
+            </div>
+        </div>
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple
+        <div class='about-section'>
+            <img src="https://i.ibb.co/Vp6YV0Z/AVA.jpg" class="avatar" alt="Ava">
+            <div class='about-content'>
+                <h2>About Ava</h2>
+                <p>I analyze **car rental margins** and platform costs for hosts trying to stay profitable in 2026. My goal is to help hosts reclaim the control that platform friction usualy takes away.</p>
+                <p style="font-size: 14px; color: #64748b;">Providing the same clarity that helped Lone Star Auto Rentals secure $46,000 in extra revenue.</p>
+            </div>
+        </div>
+        <div style="height: 60px;"></div>
+    </div>
+</body>
+</html>
 
