@@ -47,16 +47,18 @@
             color: #0f172a;
             letter-spacing: -1px;
             display: inline-block;
+            border-bottom: 3px solid transparent;
         }
 
         /* TWO-COLUMN GRID SYSTEM */
         .grid-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr; /* Slightly wider right side for the calc */
             gap: 60px;
             align-items: start;
         }
 
+        /* LEFT SIDE: TEXT CONTENT */
         .left-content {
             padding-right: 20px;
         }
@@ -136,6 +138,14 @@
             color: #0f172a;
             font-style: italic;
             margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* RIGHT SIDE: CALCULATOR */
+        .right-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         /* CALCULATOR CARD - FIXED HEIGHT */
@@ -145,7 +155,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             border: 1px solid #e2e8f0;
-            height: 1200px; 
+            height: 1500px; /* Increased height as requested */
         }
 
         iframe {
@@ -155,7 +165,7 @@
             display: block;
         }
 
-        /* ABOUT AVA CARD */
+        /* ABOUT AVA CARD (Moved to Left) */
         .about-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -166,7 +176,7 @@
             align-items: center;
             gap: 24px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .avatar {
@@ -191,6 +201,7 @@
             line-height: 1.5;
         }
 
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 900px) {
             .grid-layout {
                 grid-template-columns: 1fr;
@@ -204,7 +215,16 @@
                 border-left: none;
                 padding-left: 0;
             }
+            ul li {
+                display: block; /* Better for text flow */
+                text-align: left;
+                max-width: 400px;
+                margin: 0 auto 12px auto;
+            }
+            .logo { font-size: 42px; }
+            h1 { font-size: 36px; }
             .about-card { flex-direction: column; text-align: center; }
+            .calc-frame { height: 1600px; } /* Slightly more room for mobile wrapping */
         }
     </style>
 </head>
@@ -221,24 +241,33 @@
             
             <div class="left-content">
                 <h1>2026 Car Rental Profit Check</h1>
-                <p class="hero-sub">See what your car rental business actually produces.</p>
+                <p class="hero-sub">See what your car rental business actually produces — not what it feels like.<br>Built from real operator numbers.</p>
                 <div class="highlight-pill">Takes under 60 seconds.</div>
 
                 <h3>What This Is</h3>
                 <p>This is not a forecast. <strong>This is a reality check.</strong></p>
+                <p>Most operators focus on revenue and ignore friction. Friction is what quietly decides your profit.</p>
                 <ul>
                     <li>Platform rules.</li>
                     <li>Idle days.</li>
                     <li>Manual work you never priced in.</li>
                 </ul>
 
-                <p class="punchline">If the result feels uncomfortable, thats the point.</p>
+                <h3>What You’ll See</h3>
+                <ul class="check-list">
+                    <li>Your real monthly revenue</li>
+                    <li>Silent leakage eating your margins</li>
+                    <li>True profit before paying yourself</li>
+                    <li>How much control you actually have</li>
+                </ul>
+                
+                <p class="punchline">If the result feels uncomfortable, that’s the point.</p>
 
                 <div class="about-card">
-                    <img src="ava.jpeg" alt="Ava" class="avatar">
+                    <img src="https://i.ibb.co/Vp6YV0Z/AVA.jpg" alt="Ava" class="avatar">
                     <div class="about-text">
                         <h4>About Ava</h4>
-                        <p>I analyze <strong>car rental margins</strong> for operators trying to stay profitable in 2026.</p>
+                        <p>I analyze <strong>car rental margins</strong> and platform friction for operators trying to stay profitable in 2026. My work focuses on control — not motivation.</p>
                         <p style="margin-top: 10px; font-size: 13px; font-weight: 500;">Systems decide outcomes, not effort.</p>
                     </div>
                 </div>
@@ -249,6 +278,7 @@
                     <iframe src="https://car-rental-profit-reality-check.vercel.app/" title="Profit Calculator" scrolling="no"></iframe>
                 </div>
             </div>
+
         </div>
 
     </div>
